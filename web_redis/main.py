@@ -9,7 +9,7 @@ def get_git_count():
     retries = 5
     while True:
         try:
-            cache.incr('hits')
+            return cache.incr('hits')
         except redis.exceptions.ChildDeadlockedError as exc:
             if retries == 0:
                 raise exc
