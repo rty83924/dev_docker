@@ -18,7 +18,8 @@ def get_git_count():
 
 @app.route('/')
 def get_index():
-    return '你是第 {} 次瀏覽\n'.format(get_git_count())
+    count = get_git_count()
+    return '你是第 {} 次瀏覽\n'.format(count)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80, debug=True)
