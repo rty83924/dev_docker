@@ -6,7 +6,9 @@ services:
         - "80:80"
         volumes:
         - .:/code
+        container_name: web
     redis:
         image: "redis:alpine"
         ports:
         - "6379:6379"
+        container_name: redis
