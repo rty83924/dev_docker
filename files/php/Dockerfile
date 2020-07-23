@@ -7,6 +7,6 @@ RUN  apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
     && docker-php-ext-install -j$(nproc) bcmath calendar exif gettext sockets dba mysqli pcntl pdo_mysql shmop sysvmsg sysvsem sysvshm iconv gd \
-    && pecl install imagick-3.4.4 mcrypt-1.0.2 memcached-3.1.3 redis-5.0.2 swoole-4.4.3\
-    && docker-php-ext-enable imagick mcrypt memcached redis swoole \
+    && pecl install imagick-3.4.4 memcached-3.1.3 redis-5.0.2 swoole-4.4.3\
+    && docker-php-ext-enable imagick memcached redis swoole \
     && docker-php-ext-configure opcache --enable-opcache && docker-php-ext-install opcache
