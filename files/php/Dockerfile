@@ -10,4 +10,4 @@ RUN  apt-get update \
     && docker-php-ext-install -j$(nproc) bcmath calendar exif gettext sockets dba mysqli pcntl pdo_mysql shmop sysvmsg sysvsem sysvshm iconv gd \
     && pecl install mcrypt imagick-3.4.4 memcached-3.1.3 redis-5.0.2 swoole-4.4.3\
     && docker-php-ext-enable mcrypt imagick memcached redis swoole \
-    && docker-php-ext-configure opcache --enable-opcache && docker-php-ext-install opcache \
+    && docker-php-ext-configure opcache --enable-opcache && docker-php-ext-install opcache 
