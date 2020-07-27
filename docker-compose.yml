@@ -1,0 +1,24 @@
+updatversion: '3'
+services: 
+    web:
+        image: nginx:1.16-alpine
+        container_name: w1
+        depends_on:
+            - php
+        ports: 
+            - "80:80"
+        networks: 
+            - nginx_network
+        volumes: 
+            - ./files/nginx/conf:/etc/nginx
+            - ./files/php/code
+    php:
+        build: ./files/php/
+        container_name: php
+        networks: 
+            - nginx_network
+        volumes: 
+            - ./files/php/code:/www
+networks: 
+    nginx_network:
+        driver: build
