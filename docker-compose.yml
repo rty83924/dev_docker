@@ -22,4 +22,3 @@ services:
 networks: 
     nginx_network:
         driver: build
-        name: nginx_network
