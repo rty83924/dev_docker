@@ -14,7 +14,7 @@ services:
             - /root/docker/php/ag:/usr/share/nginx/html
     php:
         build: ./files/php/
-        container_name: php
+        container_name: w1-php
         networks: 
             - nginx_network
         volumes: 
