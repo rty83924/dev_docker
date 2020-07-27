@@ -11,7 +11,7 @@ services:
             - nginx_network
         volumes: 
             - ./files/nginx/conf:/etc/nginx
-            - ./files/php/code
+            - /root/docker/php/ag:/usr/share/nginx/html
     php:
         build: ./files/php/
         container_name: php
