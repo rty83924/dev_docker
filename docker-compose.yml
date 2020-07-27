@@ -18,7 +18,7 @@ services:
         networks: 
             - nginx_network
         volumes: 
-            - ./files/php/code:/www
+            - /root/docker/php/ag:/www
 networks: 
     nginx_network:
         driver: bridge
