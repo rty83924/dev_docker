@@ -21,4 +21,4 @@ services:
             - ./files/php/code:/www
 networks: 
     nginx_network:
-        driver: build
+        driver: birdge
