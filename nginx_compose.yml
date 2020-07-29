@@ -21,4 +21,5 @@ services:
             - /root/docker/php/ag:/www
 networks: 
     nginx_network:
+        external: true
         driver: bridge
