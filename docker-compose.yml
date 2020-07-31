@@ -15,7 +15,7 @@ services:
                 #更新下一組容器的等待時間
                 delay: 10s
                 #失敗後最大嚐試數
-                max_failure_ratio: 2
+                max_failure_ratio: 1
                 #操作順序 #stop-first-開始前先停止 #start-first-開始前先啟動
                 order: stop-first
         volumes: 
@@ -36,7 +36,7 @@ services:
                 #更新下一組容器的等待時間
                 delay: 10s
                 #失敗後最大嚐試數
-                max_failure_ratio: 2
+                max_failure_ratio: 1
                 #操作順序 #stop-first-開始前先停止 #start-first-開始前先啟動
                 order: stop-first
         volumes: 
