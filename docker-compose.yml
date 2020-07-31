@@ -22,7 +22,7 @@ services:
             - ./files/nginx/conf:/etc/nginx
             - /root/docker/php/ag:/usr/share/nginx/html
     php:
-        build: ./files/php/
+        image: php:eric
         networks: 
             - nginx_network
         deploy:
