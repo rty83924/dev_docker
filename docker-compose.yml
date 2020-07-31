@@ -1,0 +1,47 @@
+version: '3.8'
+services: 
+    web:
+        image: nginx:1.16-alpine
+        networks: 
+            - nginx_network
+        deploy:
+            #啟動副本數
+            mode: replicated
+            replicas: 3
+            #配置如何更新服務
+            uddate_config:
+                #一次更新的容器數
+                parallelism: 2
+                #更新下一組容器的等待時間
+                delay: 10s
+                #失敗後最大嚐試數
+                max_failure_ratio: 2
+                #操作順序 #stop-first-開始前先停止 #start-first-開始前先啟動
+                order: stop-first
+        volumes: 
+            - ./files/nginx/conf:/etc/nginx
+            - /root/docker/php/ag:/usr/share/nginx/html
+    php:
+        build: ./files/php/
+        networks: 
+            - nginx_network
+        deploy:
+            #啟動副本數
+            mode: replicated
+            replicas: 3
+            #配置如何更新服務
+            uddate_config:
+                #一次更新的容器數
+                parallelism: 2
+                #更新下一組容器的等待時間
+                delay: 10s
+                #失敗後最大嚐試數
+                max_failure_ratio: 2
+                #操作順序 #stop-first-開始前先停止 #start-first-開始前先啟動
+                order: stop-first
+        volumes: 
+            - /root/docker/php/ag:/www
+networks: 
+    nginx_network:
+        external: true
+        #driver: bridge
