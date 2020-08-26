@@ -43,5 +43,8 @@ services:
             - /root/docker/php/ag:/www
 networks: 
     nginx_network:
-        external: true
-        #driver: bridge
+        #使用已建置的dcvm
+        #external: true
+        #stack devloy 使用overlay
+        driver: overloy
+        
