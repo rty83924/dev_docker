@@ -40,6 +40,7 @@ services:
                 #操作順序 #stop-first-開始前先停止 #start-first-開始前先啟動
                 order: stop-first
         volumes: 
+            #配合nginx php.conf
             - /root/docker/php/ag:/www
 networks: 
     nginx_network:
